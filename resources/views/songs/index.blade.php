@@ -120,15 +120,15 @@
             <div class="ms-auto">
                 <ul class="navbar-nav me-5 mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./index.html">Discover</a>
+                        <a class="nav-link active" aria-current="page" href="{{url('/index')}}">Discover</a>
                     </li>
                 </ul>
             </div>
-            <a class="navbar-brand" href="./index.html">SoundShare</a>
+            <a class="navbar-brand" href="{{url('/index')}}">SoundShare</a>
             <div class="me-auto">
                 <ul class="navbar-nav ms-5 mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="./share.html">Share</a>
+                        <a class="nav-link" href="{{url('/share')}}">Share</a>
                     </li>
                 </ul>
             </div>
@@ -153,7 +153,7 @@
             <div class="col-12 col-md-6 col-lg-4 my-4 d-flex justify-content-center align-items-center">
                 <div class="card my-4 mx-2 {{$song->platform}}-background song-card">
                     <div class="card-body">
-                        <a href="{{route('song.song',['song' => $song])}}">
+                        <a href="{{url('/song/' . $song->id)}}">
                             <h5 class="card-title song-title song-title-{{$song->platform}}">
                                 {{$song->songtitle}}
                             </h5>

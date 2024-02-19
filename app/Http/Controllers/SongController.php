@@ -12,7 +12,8 @@ class SongController extends Controller
         return view ('songs.index', ['songs'=> $songs]);
         
     }
-    public function song(Song $song){
+    public function song($id){
+        $song = Song::find($id);
         return view('songs.song', ['song'=>$song]);
 
     }
@@ -31,6 +32,6 @@ class SongController extends Controller
         ]);
 
         $newProduct = Song::create($data);
-        return redirect(route('song.index'));
+        return redirect(route('index'));
     }
 }

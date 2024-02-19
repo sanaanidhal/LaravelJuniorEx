@@ -57,15 +57,15 @@
             <div class="ms-auto">
                 <ul class="navbar-nav me-5 mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./index.html">Discover</a>
+                        <a class="nav-link active" aria-current="page" href="{{url('/index')}}">Discover</a>
                     </li>
                 </ul>
             </div>
-            <a class="navbar-brand" href="./index.html">SoundShare</a>
+            <a class="navbar-brand" href="{{url('/index')}}">SoundShare</a>
             <div class="me-auto">
                 <ul class="navbar-nav ms-5 mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="./share.html">Share</a>
+                        <a class="nav-link" href="{{url('/share')}}">Share</a>
                     </li>
                 </ul>
             </div>
@@ -80,7 +80,7 @@
                 <div class="d-flex justify-content-center align-items-center py-5">
                     <a href="{{$song->songlink}}" class="text-reset text-none" target="_blank">
                         @if ($song->platform=='youtube')
-                        <div class="watch watch-youtube">
+                        <div class="watch watch-youtube">href="{{$song->songlink}}"
                             <i class="fa-brands fa-youtube"></i>
                             <span class="ms-2">Watch now on Youtube</span>
                         </div>@else

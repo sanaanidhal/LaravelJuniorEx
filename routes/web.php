@@ -17,8 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index.html', [SongController::class, 'index'])->name('song.index');
-Route::get('/share.html', [SongController::class, 'share'])->name('song.share');
-Route::post('/index.html', [SongController::class, 'store'])->name('song.store');
-Route::get('/song.html/{song}', [SongController::class, 'song'])->name('song.song');
+Route::get('/index', [SongController::class, 'index'])->name('index');
+Route::get('/share', [SongController::class, 'share'])->name('share');
+Route::post('/index', [SongController::class, 'store'])->name('store');
+Route::get('/song/{id}', [SongController::class, 'song'])->name('song');
 
