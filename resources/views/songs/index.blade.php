@@ -151,7 +151,7 @@
 
 
             <div class="col-12 col-md-6 col-lg-4 my-4 d-flex justify-content-center align-items-center">
-                <div class="card my-4 mx-2 {{$song->platform}}-background song-card">
+                <div class="card my-4 mx-2 {{$song->platform}}-background song-card">   
                     <div class="card-body">
                         <a href="{{url('/song/' . $song->id)}}">
                             <h5 class="card-title song-title song-title-{{$song->platform}}">
@@ -176,6 +176,20 @@
                             @endif
 
                         </a>
+                        @if ($song->platform=='youtube')
+                        <a href="{{url('/song/' . $song->id .'/update')}}">
+                            <div class="watch watch-youtube">
+                                <span class="ms-2">Update</span>
+                            </div>
+                        </a>
+                        @else
+                        <a href="{{url('/song/' . $song->id .'/update')}}">
+                            <div class="watch watch-spotify">
+                                <span class="ms-2">Update</span>
+                            </div>
+                        </a>
+                        @endif
+
                     </div>
                 </div>
             </div>

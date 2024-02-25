@@ -34,4 +34,22 @@ class SongController extends Controller
         $newProduct = Song::create($data);
         return redirect(route('index'));
     }
+
+
+
+     
+    public function update ($id)
+    {
+        $song = Song::find($id);
+        return view('songs.update', ['song'=>$song]);
+    }
+    public function edit (Request $request,$id)
+    {
+        $song = Song::find($id);
+        $input= $request->all();
+        $song->update($input);
+        return redirect ('index')->with('flash_message', 'Song Updated!');
+    }
+
+    
 }
